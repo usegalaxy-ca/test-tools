@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Reports
+report.log
+eu_tool_list.not_now
+test-list.yaml
+test-list.yaml.lock
