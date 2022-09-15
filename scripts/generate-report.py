@@ -44,7 +44,7 @@ if not sections:
     sys.exit(0)
 
 print("""---
-site: Usegalaxi-ca
+site: Usegalaxy-ca
 tags: [tools]
 title: UseGalaxy.ca Tool Updates for {date}
 supporters:
