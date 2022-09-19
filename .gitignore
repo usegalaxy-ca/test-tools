@@ -133,3 +133,4 @@ dmypy.json
 report.log
 eu_tool_list.not_now
 test-list.yaml*
+tool_test_output.json
