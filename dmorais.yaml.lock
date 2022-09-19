@@ -1,0 +1,36 @@
+install_repository_dependencies: true
+install_resolver_dependencies: true
+install_tool_dependencies: false
+tools:
+- name: ncbi_datasets
+  owner: iuc
+  revisions:
+  - 18eed8fa7f23
+  tool_panel_section_label: Get Data
+- name: ega_download_client
+  owner: iuc
+  revisions:
+  - e82175804eb1
+  tool_panel_section_label: Get Data
+- name: iedb_api
+  owner: iuc
+  revisions:
+  - 7ed6dda64a81
+  tool_panel_section_label: Get Data
+- name: dbbuilder
+  owner: galaxyp
+  revisions:
+  - e9df53a75f3c
+  tool_panel_section_label: Get Data
+- name: sra_tools
+  owner: iuc
+  revisions:
+  - 69ebb7f46e45
+  - 83c7d564b128
+  - f5ea3ce9b9b0
+  tool_panel_section_label: Get Data
+- name: unipept
+  owner: galaxyp
+  revisions:
+  - 7863f1abcdda
+  tool_panel_section_label: Get Data
