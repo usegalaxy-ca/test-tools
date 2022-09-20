@@ -70,3 +70,9 @@ tools:
   - 28f69754ddc5
   tool_panel_section_label: Get Data
   tool_shed_url: toolshed.g2.bx.psu.edu
+- name: ncbi_eutils_ecitmatch
+  owner: iuc
+  revisions:
+  - 732a52c18758
+  tool_panel_section_label: Get Data
+  tool_shed_url: toolshed.g2.bx.psu.edu
