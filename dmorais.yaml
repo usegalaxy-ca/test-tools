@@ -40,3 +40,9 @@ tools:
   - 7863f1abcdda
   tool_panel_section_label: Get Data
   tool_shed_url: toolshed.g2.bx.psu.edu
+- name: ncbi_acc_download
+  owner: iuc
+  revisions:
+  - 28587613264f
+  tool_panel_section_label: Get Data
+  tool_shed_url: toolshed.g2.bx.psu.edu
