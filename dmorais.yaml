@@ -52,3 +52,9 @@ tools:
   - 12692567c7f9
   tool_panel_section_label: Get Data
   tool_shed_url: toolshed.g2.bx.psu.edu
+- name: spocc_occ
+  owner: ecology
+  revisions:
+  - f9d76a46799a
+  tool_panel_section_label: Animal Detection on Acoustic Recordings
+  tool_shed_url: toolshed.g2.bx.psu.edu
