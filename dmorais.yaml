@@ -46,3 +46,9 @@ tools:
   - 28587613264f
   tool_panel_section_label: Get Data
   tool_shed_url: toolshed.g2.bx.psu.edu
+- name: uniprotxml_downloader
+  owner: galaxyp
+  revisions:
+  - 12692567c7f9
+  tool_panel_section_label: Get Data
+  tool_shed_url: toolshed.g2.bx.psu.edu
