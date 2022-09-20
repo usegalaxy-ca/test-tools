@@ -58,3 +58,9 @@ tools:
   - f9d76a46799a
   tool_panel_section_label: Animal Detection on Acoustic Recordings
   tool_shed_url: toolshed.g2.bx.psu.edu
+- name: ncbi_eutils_esearch
+  owner: iuc
+  revisions:
+  - 30150bd36c9a
+  tool_panel_section_label: Get Data
+  tool_shed_url: toolshed.g2.bx.psu.edu
