@@ -5,9 +5,9 @@ UPDATED_YAMLS := $(YAML_FILES:=.update)
 CORRECT_YAMLS := $(YAML_FILES:=.fix)
 INSTALL_YAMLS := $(LOCK_FILES:=.install)
 UPDATE_TRUSTED_IUC := $(LOCK_FILES:.lock=.update_trusted_iuc)
-TEST_TOOLS := $(wildcard *.yaml.lock)
+
 GALAXY_SERVER := https://gala.hopto.org/
-NOW := $(shell date -I)
+
 
 help:
 	@egrep '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-16s\033[0m %s\n", $$1, $$2}'
@@ -15,11 +15,9 @@ help:
 lint: $(LINTED_YAMLS) ## Lint the yaml files
 fix: $(CORRECT_YAMLS) ## Fix any issues (missing hashes, missing lockfiles, etc.)
 install: $(INSTALL_YAMLS) ## Install the tools in our galaxy
-test_tools: $(TEST_TOOLS)  ## Test tools from a tool list in a lock file
 
 %.lint: %
 	python scripts/fix-lockfile.py $<
-	pykwalify -d $< -s .schema.yaml
 	python scripts/identify-unpinned.py $<
 
 %.fix: %
@@ -32,18 +30,8 @@ test_tools: $(TEST_TOOLS)  ## Test tools from a tool list in a lock file
 	@echo "Installing any updated versions of $<"
 	@-shed-tools install --install_resolver_dependencies --toolsfile $< --galaxy $(GALAXY_SERVER) --api_key $(GALAXY_API_KEY) 2>&1 | tee -a report.log
 
-test_tools: $(TEST_TOOLS)
-	@echo "Testing tools from $< tool list"
-	@-shed-tools test -g $(GALAXY_SERVER) --api_key $(GALAXY_API_KEY) -t $< --test_json tool_test_output.$(NOW).json 2>&1 
-	@ln -s tool_test_output.$(NOW).json tool_test_output.json 
-	@-planemo test_reports --test_output tool_test_output.$(NOW).html 
-	@unlink tool_test_output.json
-	
-
-	
-
 pr_check:
-	for changed_yaml in `git diff remotes/origin/master --name-only | grep .yaml$$`; do python scripts/pr-check.py $${changed_yaml} && pykwalify -d $${changed_yaml} -s .schema.yaml ; done
+	for changed_yaml in `git diff origin --name-only | grep .yaml$$`; do python scripts/pr-check.py $${changed_yaml}; done
 
 update_trusted: $(UPDATE_TRUSTED_IUC) ## Run the update script
 	@# Missing --without, so this updates all tools in the file.
