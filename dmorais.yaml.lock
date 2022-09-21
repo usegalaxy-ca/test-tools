@@ -54,3 +54,13 @@ tools:
   revisions:
   - 67602de82f6e
   tool_panel_section_label: Get Data
+- name: ncbi_eutils_egquery
+  owner: iuc
+  revisions:
+  - 5277d159053d
+  tool_panel_section_label: Get Data
+- name: ncbi_eutils_ecitmatch
+  owner: iuc
+  revisions:
+  - 9a9c5027ea7c
+  tool_panel_section_label: Get Data
